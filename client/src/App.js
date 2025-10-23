@@ -38,6 +38,24 @@
 
       return body;
     };
+
+    // call new api
+    callTestApi = async () => {
+      console.log("Calling test API..");
+      response = await fetch('/api/test');
+      const body = await response.json();
+
+      if (response.status !== 200)
+      // // parse the error message
+      // message = JSON.parse(body.message);
+
+      // TODO: add timestamp to the error message
+      // message = message + " at " + new Date().toLocaleString();
+
+      throw Error(message);
+
+      return body;
+    }
       
       
     handleSubmit = async e => {
